@@ -3,7 +3,6 @@ pandas
 matplotlib
 ipywidgets
 jupyter_ui_poll
-time
 IPython.display
 bs4
 json
