@@ -1,0 +1,62 @@
+from IPython.display import display, Image, clear_output, HTML
+import time
+import random
+
+style = 'color:green; font-size:30px;'
+welcome_message = HTML(f'<h1>Welcome to the ANS test...</h1>')
+welcome_message_two = HTML(f'<h1>...where we measure your approximate number sense.</h1>')
+display(welcome_message)
+time.sleep(3)
+display(welcome_message_two)
+time.sleep(3)
+
+empty = Image('empty.png', width = 500)
+p1 = Image('14 - 12.png', width = 500)
+p2 = Image('15 - 20.png', width = 500)
+p3 = Image('16 - 12.png', width = 500)
+p4 = Image('18 - 16.png', width = 500)
+p5 = Image('18 - 20.png', width = 500)
+p6 = Image('18 - 21.png', width = 500)
+p7 = Image('9 - 10.png', width = 500)
+p8 = Image('9 - 12.png', width = 500)
+
+answers = {
+    p1:'left',
+    p2:'right',
+    p3:'left',
+    p4:'left',
+    p5:'right',
+    p6:'right',
+    p7:'right',
+    p8:'right'
+}
+
+all_trials = [p1, p2, p3, p4, p5, p6, p7, p8]
+random.shuffle(all_trials)
+
+display(empty)
+time.sleep(1.5)
+clear_output(wait=False)
+
+score = 0
+
+for trial in range(0, 8):
+    random.shuffle(all_trials)
+    display(all_trials[0])
+    time.sleep(0.75)
+    clear_output(wait=False)
+    display(empty)
+    
+    prompt = input("Which side had more dots? left or right?")
+    if prompt == answers[all_trials[0]]:
+        score = score + 1
+        print(f'Correct!')
+    else:
+        print(f'Incorrect!')
+    print(score)
+
+    time.sleep(1.5)
+    clear_output(wait=False)
+
+score_message = HTML(f"<h1>You've scored {score} points!</h1>")
+display(score_message)
