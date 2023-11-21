@@ -5,3 +5,9 @@ ipywidgets
 jupyter_ui_poll
 bs4
 requests
+IPython.display
+time
+json
+matplotlib.pyplot
+math
+random
