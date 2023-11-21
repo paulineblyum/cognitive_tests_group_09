@@ -5,5 +5,4 @@ ipywidgets
 jupyter_ui_poll
 bs4
 requests
-math
 random
