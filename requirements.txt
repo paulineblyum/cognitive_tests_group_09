@@ -3,11 +3,9 @@ pandas
 matplotlib
 ipywidgets
 jupyter_ui_poll
-IPython.display
 bs4
 json
 requests
 matplotlib.pyplot
 math
 random
-time
